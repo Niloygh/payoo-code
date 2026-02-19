@@ -27,6 +27,22 @@ document.getElementById('add-money-btn').addEventListener('click', function(){
              ${bankAccount} 
              at ${ new Date()}`)
         setBalance(newBalance)
+
+        // 1- history-container ke dore niye asbo
+        const history = document.getElementById('history-container')
+
+        // 2- new div create korbo
+        const newHIstory = document.createElement('div')
+         
+        // 3- new div innerHTML add korbo
+        newHIstory.innerHTML= `
+        <div class="Transaction-card p-5 bg-base-100">
+            Add Money Success from ${bankAccount} , acc-no ${accno} at ${ new Date()}
+        </div>
+        `
+        
+        // 4- history container e newDiv append korbo
+        history.append(newHIstory)
     }
     else{
         alert('Invalid Pin')
